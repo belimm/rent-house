@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+        <link rel="stylesheet" type="text/css" href="static/style.css">
+        <link rel="shortcut icon" type="image/jpg" href="static/tabIcon.jpg"/>
+        <script type="text/javascript" src="check.js"></script>
+        <title>Register</title>
+    </head>
+
+
+
+
+<body>
+    <div class="header">
+        <img src="static/homePageLogo.jpg" alt="Logo" class="logo" onclick="window.location='index.html'"/>
+        <h1>Register Page</h1>
+    </div>
+
+    <br><br>
+
+    
+    <div class="darkGreenArea">
+        <form name="formRegistration" method="post" onsubmit="return validate();" action="register.py">
+            <label><b>User Name</b></label>           
+            <input id="Entry" type="text" name="userName">
+            
+            <br><br>    
+            
+            <label><b>Password</b></label>              
+            <input id="Pass"type="password" name="password">
+            
+            <br><br>    
+            
+            <label><b>Password Again</b></label>     
+            <input id="Pass"type="password" name="passwordAgain">
+            
+            <br><br>    
+            
+            <label>Full Name</b></label>
+            <input id="Entry" type="text" name="name">
+            
+            <br><br>
+
+            <label>Mail Address</b></label>
+            <input id="Entry" type="text" name="email">
+            
+            <br><br> 
+
+
+            <label>Phone No</b></label>
+            <input id="Entry" type="text" name="phoneNo">
+            
+            <br><br>  
+
+                
+            
+            
+            <input type="submit" id="log">
+            <input type="reset" id="log">  
+    
+        </form>
+
+    </div>
+    
+
+
+</body>
+
+
+
+</html>
