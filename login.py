@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/Users/IRPHAN/AppData/Local/Programs/Python/Python39/python
 import http.cookies as Cookie
 import random
 import sqlite3

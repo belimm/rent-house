@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/Users/IRPHAN/AppData/Local/Programs/Python/Python39/python
 import http.cookies as Cookie
 import sqlite3
 import os
@@ -52,9 +52,11 @@ if "HTTP_COOKIE" in os.environ:
 				</div>
 				<br><br><br>
 				<div class="darkGreenArea">
-					<button id="log" style="width:200px;" onclick="window.location='newAdvertisement.py'">New Advertisement </button>
+					<button id="log" style="width:200px;" onclick="window.location='newAdvertisement.html'">New Advertisement </button>
 					<br><br>
 					<button id="log" style="width:220px;" onclick="window.location='previousAdvertisements.py'">Previous Advertisements </button>
+					<br><br>
+					<button id="log" style="width:220px;" onclick="window.location='allAdvertisements.py'">All Advertisements </button>
 
 				</div>
 				""".format(row[0])

@@ -14,6 +14,7 @@ def printHeader(title):
                         <title>{}</title>
                         <link rel="stylesheet" type="text/css" href="static/style.css">
                         <link rel="shortcut icon" type="image/jpg" href="static/tabIcon.jpg"/>
+                      
                         
                     </head>
                     <body>""".format(title))
@@ -37,7 +38,7 @@ c = conn.cursor()
 c.execute("SELECT CITY.cname as city, street, noOfBedrooms,monthlyFee FROM HOUSE INNER JOIN CITY ON CITY.cid = HOUSE.cid")
 table = c.fetchall()
 print("""
-    <table id ="adds-table">
+    <table id ="preTable">
         <thead style='color:white';>
             <th>Street</th>
             <th>City</th>
@@ -55,7 +56,7 @@ for row in table:
             <td>{}</th>
             <td>{}</th>
             <form method="post" name="deleteAdvertisement" action="deleteAdvertisement.py">
-                <td><input type="submit"  name="btnDelete" id="log" value="Delete" style = 'width:100%;'>
+                <td><input type="submit"  name="btnDelete" id="log" value="Delete" style='width:80px;'>
                  </input></td>
             </form>
         </tr>
@@ -64,53 +65,13 @@ for row in table:
 print("""
         </tbody>
         </table>
-        <br><br><br>
+        
+        <h1 style='color:red';> Warning! </h1><br><br>
+        <h2 style='color:red';> </h2>
         <button id="log" onclick="window.location='main.py'"> Return Home</button>
-    
     </div>
     """) 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-"""<!DOCTYPE html>
-
-<html>
-    <head>
-        <title>Rent House | New Advertisement</title>
-        <link rel="stylesheet" type="text/css" href="static/style.css">
-        <link rel="shortcut icon" type="image/jpg" href="static/tabIcon.jpg"/>
-        
-    </head>
-
-    <body>
-        <div class="header">
-            <img src="static/homePageLogo.jpg" alt="Logo" class="logo" onclick="window.location='index.html' " />
-            <h1>New Advertisement</h1>
-        </div>
-
-        <br><br><br><br>
-
-        <div class="darkGreenArea">
-            
-            
-            
-        </div>
-
-
-        
-        
-        
-    </body>
-</html>"""

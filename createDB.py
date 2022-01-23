@@ -4,7 +4,7 @@ import sqlite3
 def createDataBase(dbFileName):
     conn = sqlite3.connect(dbFileName)
     c = conn.cursor()
-
+    
     c.execute("""CREATE TABLE IF NOT EXISTS USER(
         userName TEXT PRIMARY KEY,
         password TEXT NOT NULL,
@@ -23,15 +23,15 @@ def createDataBase(dbFileName):
     
 
     c.execute("""CREATE TABLE IF NOT EXISTS HOUSE(
-        houseID INTEGER,
+        houseid INTEGER PRIMARY KEY AUTOINCREMENT,
         userName TEXT,
         cid INTEGER,
         street TEXT NOT NULL,
         noOfBedrooms INTEGER NOT NULL,
         monthlyFee INTEGER NOT NULL,
         FOREIGN KEY (userName) REFERENCES USER(userName),
-        FOREIGN KEY (cid) REFERENCES CITY(cid),
-        PRIMARY KEY(houseID))
+        FOREIGN KEY (cid) REFERENCES CITY(cid)
+        )
         """)
     
     conn.commit()

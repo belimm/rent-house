@@ -45,3 +45,5 @@ function validate(){
         return false
     }
 }
+
+//{1: ["Lefkosa","Girne","Gazi Magusa","Iskele","Guzelyurt","Lefke"],2: [1,2,7,8],3:[200,500]}

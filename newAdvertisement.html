@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Rent House</title>
+        <link rel="stylesheet" type="text/css" href="static/style.css">
+        <link rel="shortcut icon" type="image/jpg" href="static/tabIcon.jpg"/>
+        
+    </head>
+
+    <body>
+        <div class="header">
+            <img src="static/homePageLogo.jpg" alt="Logo" class="logo" onclick="window.location='main.py'"/>
+            <h1>New Advertisement</h1>
+        </div>
+    
+        <br><br>
+    
+        
+        <div class="darkGreenArea">
+            <form name="formNewAdvertisement" method="post"  action="newAdvertisement.py">
+                <label><b>Street</b></label>
+                <input id="Entry" type="text" name="street">
+
+                <br><br>
+
+                <label for="city">City</label>
+                <select name ="city" id="CityOption">
+                    <option value="Lefkosa">Lefkosa</option>
+                    <option label="Girne">Girne</option>
+                    <option label="Gazi Magusa">Gazi Magusa</option>
+                    <option label="Iskele">Iskele</option>
+                    <option label="Guzelyurt">Guzelyurt</option>
+                    <option label="Lefke">Lefke</option>
+                </select>
+
+                <br><br>
+
+                <label><b>Number of Bedrooms</b></label>
+                <input id="Entry"type="text" name="noOfBedrooms">
+
+                <br><br>
+
+                <label>Monthly Fee</b></label>
+                <input id="Entry" type="text" name="monthlyFee">
+
+                <br><br>
+
+
+
+                <input type="submit" value = "Submit" id="log">
+                <input type="reset"  value = "Reset"id="log">
+
+            </form>
+
+        </div>
+        
+        
+    </body>
+</html>
