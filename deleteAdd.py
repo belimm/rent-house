@@ -14,7 +14,7 @@ def printHeader(title):
                         <title>{}</title>
                         <link rel="stylesheet" type="text/css" href="static/style.css">
                         <link rel="shortcut icon" type="image/jpg" href="static/tabIcon.jpg"/>
-                      
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
                         
                     </head>
                     <body>""".format(title))
@@ -51,10 +51,10 @@ print("""
 for row in table:
    print("""
         <tr style='color:white';>
-            <td>{}</th>
-            <td>{}</th>
-            <td>{}</th>
-            <td>{}</th>
+            <td>{}</td>
+            <td>{}</td>
+            <td>{}</td>
+            <td>{}</td>
             <form method="post" name="deleteAdvertisement" action="deleteAdvertisement.py">
                 <td><input type="submit"  name="btnDelete" id="log" value="Delete" style='width:80px;'>
                  </input></td>

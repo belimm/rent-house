@@ -1,6 +1,7 @@
 #!/Users/IRPHAN/AppData/Local/Programs/Python/Python39/python
 import cgi
 import sqlite3
+import re
 
 def printHeader(title):
 	print ("Content-type: text/html")
@@ -58,11 +59,14 @@ elif "name"not in form.keys():
 elif form["password"].value != form["passwordAgain"].value:
 	message= "Passwords should be the same!"
 	warning = True
-elif len(form["password"].value) < 5:
-	message= "Password should include at least 5 chars!"
+elif len(form["password"].value) <= 7:
+	message= "Password should include at least 8 chars!"
 	warning = True
 elif countDigits(form["password"].value) < 2:
 	message= "Password should include at least 2 digits!"
+	warning = True
+elif not re.match(r'[^@]+@[^@]+.[^@]+', form["email"].value):
+	message= "Please enter valid email!"
 	warning = True
 else:
 	conn = sqlite3.connect("rentHouse.db")

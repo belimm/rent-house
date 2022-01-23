@@ -14,7 +14,7 @@ def printHeader(title):
                         <title>{}</title>
                         <link rel="stylesheet" type="text/css" href="static/style.css">
                         <link rel="shortcut icon" type="image/jpg" href="static/tabIcon.jpg"/>
-                        
+                       
                     </head>
                     <body>""".format(title))
 
@@ -36,6 +36,7 @@ conn = sqlite3.connect("rentHouse.db")
 c = conn.cursor()
 c.execute("SELECT CITY.cname as city, street, noOfBedrooms,monthlyFee FROM HOUSE INNER JOIN CITY ON CITY.cid = HOUSE.cid")
 table = c.fetchall()
+rowID = 0
 print("""
     <table id ="adds-table">
         <thead style='color:white';>
@@ -49,13 +50,13 @@ print("""
         """)  
 for row in table:
    print("""
-        <tr style='color:white';>
+        <tr  id = "table_row"  onclick="myFunction(this)" style='color:white';>
             <td>{}</th>
             <td>{}</th>
             <td>{}</th>
             <td>{}</th>
-            <form method="post" name="deleteAdvertisement" action="deleteAdvertisement.py">
-                <td><input type="submit"  name="btnDelete" id="log" value="Delete" style = 'width:100%;'>
+            <form method="post" name="deleteAdvertisement" action="deleteAdd.html">
+                <td ><input type="submit"  name="btnDelete" id="log" value="Delete" style = 'width:100%;'>
                  </input></td>
             </form>
         </tr>
@@ -64,6 +65,11 @@ for row in table:
 print("""
         </tbody>
         </table>
+		<script>
+			function myFunction(x) {
+				alert("Row index is: " + x.rowIndex);
+			}
+		</script>
         <br><br><br>
         <button id="log" onclick="window.location='main.py'"> Return Home</button>
     
@@ -76,41 +82,3 @@ print("""
 
 
 
-
-
-
-
-
-
-
-
-"""<!DOCTYPE html>
-
-<html>
-    <head>
-        <title>Rent House | New Advertisement</title>
-        <link rel="stylesheet" type="text/css" href="static/style.css">
-        <link rel="shortcut icon" type="image/jpg" href="static/tabIcon.jpg"/>
-        
-    </head>
-
-    <body>
-        <div class="header">
-            <img src="static/homePageLogo.jpg" alt="Logo" class="logo" onclick="window.location='index.html' " />
-            <h1>New Advertisement</h1>
-        </div>
-
-        <br><br><br><br>
-
-        <div class="darkGreenArea">
-            
-            
-            
-        </div>
-
-
-        
-        
-        
-    </body>
-</html>"""

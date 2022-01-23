@@ -2,7 +2,7 @@
 
 <html>
     <head>
-        <title>Rent House</title>
+        <title>Rent House | Delete Account</title>
         <link rel="stylesheet" type="text/css" href="static/style.css">
         <link rel="shortcut icon" type="image/jpg" href="static/tabIcon.jpg"/>
         
@@ -11,13 +11,21 @@
     <body>
         <div class="header">
             <img src="static/homePageLogo.jpg" alt="Logo" class="logo" onclick="window.location='main.py'"/>
-            <h1>New Advertisement</h1>
+            <h1>Delete Advertisement</h1>
         </div>
-    
-        <br><br>
-    
+
+		<br><br>
+
+		<div class="darkGreenArea">
+            <h1 style='color:red';> Warning! </h1>
+			<h2 style='color:red';> Do you confirm that your Advertisement will be deleted?</h2> 
+            <button action="denemePrint()" style="background-color:green;color:white;" id="log" onclick="window.location='deleteAdd.py'"> Yes</button>
+            <button name="nobtn" style="background-color:red;color:white;" id="log" onclick="window.location='previousAdvertisements.py'"> No</button>
+        </div>
+
+
         
-		
+        
         
     </body>
 </html>
